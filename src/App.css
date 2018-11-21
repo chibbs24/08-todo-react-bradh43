@@ -90,52 +90,6 @@ body{
   background-image: url("assets/icons/addHover.png");
 }
 
-.todoItem {
-  display: block;
-  padding: 0px;
-  margin: 0px;
-}
-
-.todo-title {
-  width: 75%;
-  display: inline-block;
-}
-
-.todo-title h2 {
-  padding-left: 15px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-
-
-}
-
-#checkIcon {
-  width: 32px;
-  height: 32px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: inline-block;
-}
-
-
-#checkIcon:hover {
-  background-image: url("assets/icons/checkHover.png") !important;
-}
-
-#removeIcon {
-  float: right;
-  background-image: url("assets/icons/delete.png");
-  width: 32px;
-  height: 32px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: inline-block;
-}
-
-#removeIcon:hover {
-  background-image: url("assets/icons/deleteHover.png");
-}
-
 .footer {
   display: block;
   padding-top: 128px;
