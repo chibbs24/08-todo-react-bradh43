@@ -1,0 +1,38 @@
+.addIcon {
+  display: block;
+}
+
+.newTodo {
+  width: 90%;
+  display: inline-block;
+}
+
+.newTodo input {
+  padding-left: 15px;
+  font-size: 26px;
+  width: 100%;
+  text-decoration: none;
+  outline: none;
+  background-color: transparent;
+  border: 0px solid;
+  font-family: kg_primary_italics;
+}
+
+.newTodo input:focus {
+  outline: none;
+}
+
+#addIcon {
+  background-image: url("assets/icons/add.png");
+  width: 32px;
+  height: 32px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+
+
+#addIcon:hover {
+  background-image: url("assets/icons/addHover.png");
+}
