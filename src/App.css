@@ -74,33 +74,7 @@ body{
   font-size: 20px;
 }
 
-.remove-completed {
-  display: inline-block;
-  padding: 10px;
-}
 
-.remove-all {
-  display: inline-block;
-  padding: 10px;
-}
-
-#removeCompletetedIcon {
-  background-image: url("assets/icons/clearAll.png");
-  width: 32px;
-  height: 32px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: inline-block;
-}
-
-#removeAllIcon {
-  background-image: url("assets/icons/garbage.png");
-  width: 32px;
-  height: 32px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: inline-block;
-}
 
 /* change style if screen is mobile size */
 @media screen and (max-width: 600px) {

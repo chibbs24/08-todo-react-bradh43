@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import Todo from './Todo';
 import NewTodo from './NewTodo';
+import RemoveCompleted from './RemoveCompleted';
+import RemoveAll from './RemoveAll';
+
 
 class App extends Component {
   render() {
@@ -24,22 +27,15 @@ class App extends Component {
           </div>
 
           <div className="footer">
-            <div className="remove-completed">
-              <button type="submit" id="removeCompletedButton">
-                <div className="remove-button">
-                  <div id="removeCompletetedIcon"></div>
-                  <text>Remove Completed</text>
-                </div>
-              </button>
-            </div>
-            <div className="remove-all">
-              <button type="submit" id="removeAllButton">
-                <div className="remove-button">
-                  <div id="removeAllIcon"></div>
-                  <text>Remove All</text>
-                </div>
-              </button>
-            </div>
+
+            <RemoveCompleted/>
+
+            <RemoveAll/>
+
+        
+
+
+
           </div>
 
         </div>
