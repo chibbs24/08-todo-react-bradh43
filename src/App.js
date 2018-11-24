@@ -11,6 +11,8 @@ import Todo from './Todo';
 import NewTodo from './NewTodo';
 import RemoveCompleted from './RemoveCompleted';
 import RemoveAll from './RemoveAll';
+import SortTodo from './SortTodo';
+
 
 
 class App extends Component {
@@ -22,10 +24,11 @@ class App extends Component {
           <div className="header-title">
             <h1>To-Do  List</h1>
           </div>
+          <SortTodo/>
           <hr/>
         </div>
 
-        <div className="items">
+        <div className="items" id="items">
           <Todo/>
           <NewTodo/>
         </div>
