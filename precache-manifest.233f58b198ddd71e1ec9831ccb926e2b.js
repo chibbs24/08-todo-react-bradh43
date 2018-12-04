@@ -12,19 +12,19 @@ self.__precacheManifest = [
     "url": "/08-todo-react-bradh43/static/js/runtime~main.8aba2746.js"
   },
   {
-    "revision": "d7d7ee0add0593d6c50c",
-    "url": "/08-todo-react-bradh43/static/js/main.d7d7ee0a.chunk.js"
+    "revision": "fbf4d227ea8f92427756",
+    "url": "/08-todo-react-bradh43/static/js/main.fbf4d227.chunk.js"
   },
   {
-    "revision": "3da870a3c1c4b41662f2",
-    "url": "/08-todo-react-bradh43/static/js/1.3da870a3.chunk.js"
+    "revision": "939cbde5f9c76620fa49",
+    "url": "/08-todo-react-bradh43/static/js/1.939cbde5.chunk.js"
   },
   {
-    "revision": "d7d7ee0add0593d6c50c",
-    "url": "/08-todo-react-bradh43/static/css/main.d5470c8b.chunk.css"
+    "revision": "fbf4d227ea8f92427756",
+    "url": "/08-todo-react-bradh43/static/css/main.004bac26.chunk.css"
   },
   {
-    "revision": "4d539b3df14aa7db344cbb4b375c202f",
+    "revision": "1e2b5f6654938df3672b13cd88da722e",
     "url": "/08-todo-react-bradh43/index.html"
   }
 ];
