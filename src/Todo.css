@@ -23,12 +23,24 @@
   background-size: cover;
   background-repeat: no-repeat;
   display: inline-block;
+  background-image: url("assets/icons/uncheck.png");
 }
 
 
 #checkIcon:hover {
   background-image: url("assets/icons/checkHover.png") !important;
 }
+
+.check {
+  background-image: url("assets/icons/check.png") !important;
+}
+
+.strikeText{
+  text-decoration: line-through;
+  color: darkgray;
+}
+
+
 
 #removeIcon {
   float: right;

@@ -31,8 +31,6 @@
   display: inline-block;
 }
 
-
-
 #addIcon:hover {
   background-image: url("assets/icons/addHover.png");
 }

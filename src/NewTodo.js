@@ -4,6 +4,13 @@ import './NewTodo.css';
 
 class NewTodo extends Component {
 
+  constructor(props){
+    super(props)
+    this.state={
+      addTodo: props.addTodo
+    }
+  }
+
   addButtonClick = () => {
     this.addTodoItem(this.refs.newTodoInput.value);
   }
@@ -15,10 +22,9 @@ class NewTodo extends Component {
    }
 
    addTodoItem(newTodo) {
-     console.log(newTodo);
-
+     this.refs.newTodoInput.value = ""
+     this.state.addTodo(newTodo)
    }
-
 
   render() {
     return (

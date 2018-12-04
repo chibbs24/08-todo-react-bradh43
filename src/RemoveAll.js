@@ -2,15 +2,17 @@ import React, { Component } from 'react';
 import './RemoveAll.css';
 
 class RemoveAll extends Component {
-
-  removeAllTodos = () => {
-    console.log("Remove All");
+  constructor(props){
+    super(props)
+    this.state={
+      removeAll: props.removeAll,
+    }
   }
-
+  
   render() {
     return (
       <div className="remove-all">
-        <button onClick={this.removeAllTodos} type="submit" id="removeAllButton">
+        <button onClick={this.props.removeAll} type="submit" id="removeAllButton">
           <div className="remove-button">
             <div id="removeAllIcon"></div>
             Remove All
