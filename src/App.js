@@ -1,17 +1,17 @@
 //Brad Hodkinson
 //Lab 8
 // Requirements:
-// {} add an ability to sort ToDos
+// {x} add an ability to sort ToDos
 //  - by created date
 //  - by completed status
 
-import React, { Component } from 'react';
-import './App.css';
-import NewTodo from './NewTodo';
-import RemoveCompleted from './RemoveCompleted';
-import RemoveAll from './RemoveAll';
-import SortTodo from './SortTodo';
-import Todo from './Todo';
+import React, { Component } from 'react'
+import './App.css'
+import NewTodo from './NewTodo'
+import RemoveCompleted from './RemoveCompleted'
+import RemoveAll from './RemoveAll'
+import SortTodo from './SortTodo'
+import Todo from './Todo'
 
 class App extends Component {
 
@@ -37,9 +37,9 @@ class App extends Component {
       .then(retrievedTodos => {
         this.setState(state => ({
               todos: retrievedTodos
-            }));
+            }))
         this.sortByDate()
-        return true;
+        return true
       })
       .catch(error => console.log('Error fetching todos:' + error))
 
@@ -50,17 +50,16 @@ class App extends Component {
     var oldestIndex = sortedTodos.length
     var temp = sortedTodos.length
     for(var i = 0; i < sortedTodos.length; i++){
-      oldestIndex = i;
-      for(var  j = i+1; j< sortedTodos.length; j++){
+      oldestIndex = i
+      for(var j = i+1; j< sortedTodos.length; j++){
          if(sortedTodos[j].created < sortedTodos[oldestIndex].created){
-            oldestIndex = j;
+            oldestIndex = j
          }
       }
-      temp = sortedTodos[i];
-      sortedTodos[i] = sortedTodos[oldestIndex];
-      sortedTodos[oldestIndex] = temp;
+      temp = sortedTodos[i]
+      sortedTodos[i] = sortedTodos[oldestIndex]
+      sortedTodos[oldestIndex] = temp
     }
-    console.log(sortedTodos);
     this.setState({
       todos: sortedTodos
     })
@@ -76,7 +75,7 @@ class App extends Component {
       } else {
         incompletedTodos.push(todo)
       }
-    });
+    })
 
     this.setState({
       todos: [...completedTodos, ...incompletedTodos]
@@ -85,18 +84,18 @@ class App extends Component {
 
   getTodos(onSuccess, onFail) {
     return new Promise((resolve, reject) => {
-      var xhttp = new XMLHttpRequest();
+      var xhttp = new XMLHttpRequest()
       xhttp.onreadystatechange = function() {
           if (this.readyState === 4 && this.status === 200) {
             resolve(JSON.parse(this.responseText))
           } else if (this.readyState === 4) {
-              console.log("Server Error");
+              console.log("Server Error")
               reject('Error')
           }
       }
-      xhttp.open("GET", "https://api.kraigh.net/todos", true);
-      xhttp.setRequestHeader("x-api-key", this.state.apiKey);
-      xhttp.send();
+      xhttp.open("GET", "https://api.kraigh.net/todos", true)
+      xhttp.setRequestHeader("x-api-key", this.state.apiKey)
+      xhttp.send()
     })
   }
 
@@ -109,7 +108,7 @@ class App extends Component {
         todo.completed = complete
       }
       updateTodos.push(todo)
-    });
+    })
 
     this.setState({
       todos: updateTodos
@@ -119,12 +118,12 @@ class App extends Component {
         completed: complete
     }
     // Initalize AJAX Request
-    var xhttp = new XMLHttpRequest();
+    var xhttp = new XMLHttpRequest()
 
-    xhttp.open("PUT", "https://api.kraigh.net/todos/"+id, true);
-    xhttp.setRequestHeader("Content-type", "application/json");
-    xhttp.setRequestHeader("x-api-key", this.state.apiKey);
-    xhttp.send(JSON.stringify(data));
+    xhttp.open("PUT", "https://api.kraigh.net/todos/"+id, true)
+    xhttp.setRequestHeader("Content-type", "application/json")
+    xhttp.setRequestHeader("x-api-key", this.state.apiKey)
+    xhttp.send(JSON.stringify(data))
   }
 
 
@@ -133,10 +132,10 @@ class App extends Component {
       .then(newTodo => {
         this.setState(state => ({
               todos: [...this.state.todos, newTodo]
-            }));
-        return true;
+            }))
+        return true
       })
-      .catch(error => console.log('Error fetching todos:' + error))
+      .catch(error => console.log('Error adding todo:' + error))
   }
 
   generateNewTodo(newTodo){
@@ -146,37 +145,37 @@ class App extends Component {
           text: newTodo
       }
       // Initalize AJAX Request
-      var xhttp = new XMLHttpRequest();
+      var xhttp = new XMLHttpRequest()
       // Response handler
       xhttp.onreadystatechange = function() {
           // Wait for readyState = 4 & 200 response
           if (this.readyState === 4 && this.status === 200) {
               // parse JSON response
-              var todo = JSON.parse(this.responseText);
+              var todo = JSON.parse(this.responseText)
               resolve(todo)
           } else if (this.readyState === 4) {
               // this.status !== 200, error from server
-              console.log("Server Error");
-              reject('Error');
+              console.log("Server Error")
+              reject('Error')
           }
-      };
-      xhttp.open("POST", "https://api.kraigh.net/todos", true);
+      }
+      xhttp.open("POST", "https://api.kraigh.net/todos", true)
 
-      xhttp.setRequestHeader("Content-type", "application/json");
-      xhttp.setRequestHeader("x-api-key", this.state.apiKey);
-      xhttp.send(JSON.stringify(data));
+      xhttp.setRequestHeader("Content-type", "application/json")
+      xhttp.setRequestHeader("x-api-key", this.state.apiKey)
+      xhttp.send(JSON.stringify(data))
     })
   }
 
   removeTodo(id){
     // Initalize AJAX Request
-    var xhttp = new XMLHttpRequest();
+    var xhttp = new XMLHttpRequest()
 
-    xhttp.open("DELETE", "https://api.kraigh.net/todos/"+id, true);
+    xhttp.open("DELETE", "https://api.kraigh.net/todos/"+id, true)
 
-    xhttp.setRequestHeader("Content-type", "application/json");
-    xhttp.setRequestHeader("x-api-key", this.state.apiKey);
-    xhttp.send();
+    xhttp.setRequestHeader("Content-type", "application/json")
+    xhttp.setRequestHeader("x-api-key", this.state.apiKey)
+    xhttp.send()
   }
 
   deleteTodo(id){
@@ -184,11 +183,13 @@ class App extends Component {
 
     this.state.todos.forEach(function(todo) {
       if(todo.id === id){
+        //remove todo from API
         this.removeTodo(todo.id)
       } else {
-        remainingTodos.push(todo);
+        //keep the todo, and add it to the array of todos to keep
+        remainingTodos.push(todo)
       }
-    }, this);
+    }, this)
 
     this.setState({
       todos: remainingTodos
@@ -212,9 +213,9 @@ class App extends Component {
       if(todo.completed){
         this.removeTodo(todo.id)
       } else {
-        incompleteTodos.push(todo);
+        incompleteTodos.push(todo)
       }
-    }, this);
+    }, this)
 
     this.setState({
       todos: incompleteTodos
@@ -258,8 +259,8 @@ class App extends Component {
         </div>
 
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
